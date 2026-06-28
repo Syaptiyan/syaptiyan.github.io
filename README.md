@@ -1,8 +1,6 @@
 # 👋 Syaptiyan Ade Putra
 
-**IT Security L1 - BigFix Engineer**
-
-Berpengalaman 3+ tahun di bidang IT Security, patch management, server hardening, dan pemantauan infrastruktur menggunakan BigFix.
+Portfolio Pribadi - Web Developer & IT Enthusiast
 
 ## 💼 Pengalaman Kerja
 

@@ -120,6 +120,29 @@
             border-color:var(--accent); color:var(--text);
             background:var(--accent-glow);
         }
+        .filter-select {
+            padding:14px 20px; border-radius:14px;
+            border:1px solid var(--border); background:var(--card);
+            color:var(--text-dim); font-size:.85rem; font-weight:600;
+            cursor:pointer; transition:all .2s;
+            font-family:inherit;
+            appearance:none;
+            background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat:no-repeat;
+            background-position:right 14px center;
+            padding-right:36px;
+        }
+        .filter-select:focus {
+            outline:none; border-color:var(--accent);
+        }
+        .filter-select option {
+            background:var(--card); color:var(--text);
+        }
+        .region-tag {
+            padding:4px 10px; border-radius:100px;
+            font-size:.7rem; font-weight:600;
+            background:rgba(99,102,241,0.15); color:#6366f1;
+        }
 
         /* GRID */
         .heroes-grid {
@@ -329,6 +352,17 @@
     <div class="wrap">
         <div class="search-bar">
             <input type="text" class="search-input" placeholder="Cari pahlawan..." x-model="search" @input="filterHeroes()">
+            <select class="filter-select" x-model="selectedRegion" @change="filterHeroes()">
+                <option value="">Semua Daerah</option>
+                <option value="aceh">Aceh</option>
+                <option value="sumatera">Sumatera</option>
+                <option value="jawa">Jawa</option>
+                <option value="bali">Bali</option>
+                <option value="kalimantan">Kalimantan</option>
+                <option value="sulawesi">Sulawesi</option>
+                <option value="maluku">Maluku</option>
+                <option value="papua">Papua</option>
+            </select>
             <button class="filter-btn" :class="{ active: sortBy === 'name' }" @click="sortHeroes('name')">
                 <i class="fas fa-sort-alpha-down"></i> Nama
             </button>
@@ -367,6 +401,7 @@
                     </div>
                     <div class="hero-desc" x-text="hero.description || 'Tidak ada deskripsi tersedia.'"></div>
                     <div class="hero-tags">
+                        <span class="region-tag" x-show="getRegion(hero) !== ''" x-text="getRegion(hero)"></span>
                         <span class="tag" x-show="hero.description && hero.description.toLowerCase().includes('militer')">
                             <i class="fas fa-shield-halved"></i> Militer
                         </span>
@@ -440,9 +475,21 @@ function pahlawanApp() {
         loading: true,
         search: '',
         sortBy: 'name',
+        selectedRegion: '',
         modalOpen: false,
         selectedHero: null,
         showBackTop: false,
+
+        regionKeywords: {
+            'aceh': ['aceh', 'banda aceh', 'teuku', 'cut nyak', 'sisingamangaraja', 'perang aceh', 'isn'],
+            'sumatera': ['sumatera', 'sumatra', 'padang', 'palembang', 'jambi', 'lampung', 'riau', 'bengkulu', 'medan', 'minang', 'batak', 'melayu'],
+            'jawa': ['jawa', 'jakarta', 'surabaya', 'bandung', 'yogyakarta', 'jogja', 'semarang', 'solo', 'surakarta', 'banten', 'cirebon', 'malang', 'bogor', 'depok', 'tanggerang', 'jawa timur', 'jawa tengah', 'jawa barat', 'dki', 'majalengka', 'blitar'],
+            'bali': ['bali', 'denpasar', 'badung', 'singaraja'],
+            'kalimantan': ['kalimantan', 'borneo', 'banjarmasin', 'pontianak', 'balikpapan', 'samarinda', 'palangkaraya', 'banjar', 'melawi'],
+            'sulawesi': ['sulawesi', 'makassar', 'manado', 'toraja', 'bugis', 'minahasa', 'gorontalo', 'palu', 'kendari'],
+            'maluku': ['maluku', 'ambon', 'ternate', 'tidore', 'pattimura', 'maluku utara'],
+            'papua': ['papua', 'jayapura', 'irian']
+        },
 
         async init() {
             await this.fetchHeroes();
@@ -464,12 +511,38 @@ function pahlawanApp() {
             }
         },
 
+        getRegion(hero) {
+            const text = (hero.name + ' ' + (hero.description || '')).toLowerCase();
+            for (const [region, keywords] of Object.entries(this.regionKeywords)) {
+                for (const kw of keywords) {
+                    if (text.includes(kw)) {
+                        const labels = {
+                            'aceh': 'Aceh',
+                            'sumatera': 'Sumatera',
+                            'jawa': 'Jawa',
+                            'bali': 'Bali',
+                            'kalimantan': 'Kalimantan',
+                            'sulawesi': 'Sulawesi',
+                            'maluku': 'Maluku',
+                            'papua': 'Papua'
+                        };
+                        return labels[region] || '';
+                    }
+                }
+            }
+            return '';
+        },
+
         filterHeroes() {
             const q = this.search.toLowerCase();
-            this.filteredHeroes = this.heroes.filter(h =>
-                h.name.toLowerCase().includes(q) ||
-                (h.description && h.description.toLowerCase().includes(q))
-            );
+            const region = this.selectedRegion;
+            this.filteredHeroes = this.heroes.filter(h => {
+                const matchSearch = !q || 
+                    h.name.toLowerCase().includes(q) ||
+                    (h.description && h.description.toLowerCase().includes(q));
+                const matchRegion = !region || this.getRegion(h).toLowerCase() === region;
+                return matchSearch && matchRegion;
+            });
         },
 
         sortHeroes(by) {

@@ -4,13 +4,6 @@ Portfolio Pribadi - Web Developer & IT Enthusiast
 
 ## 💼 Pengalaman Kerja
 
-### XSYS Solusi Cemerlang
-**IT Security L1 - BigFix Engineer** | Mei 2023 - Sekarang
-- Setup dan konfigurasi BigFix agent di server
-- Patching server secara proaktif untuk menambal kerentanan
-- Hardening dan best practice keamanan menggunakan BigFix
-- Laporan mingguan dan bulanan untuk tracking progress
-
 ### Lumina (YC W22)
 **Operator Data Entry** | Sep 2022 - Mar 2023
 - Input data lowongan pekerjaan ke database

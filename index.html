@@ -50,6 +50,10 @@
             transition:color .2s;
         }
         .nav-links a:hover { color:var(--text); }
+        .hamburger {
+            display:none; background:none; border:none;
+            color:var(--text); font-size:1.4rem; cursor:pointer;
+        }
 
         /* MAIN */
         .wrap { max-width:900px; margin:0 auto; padding:0 24px; }
@@ -209,6 +213,14 @@
             .hero-info .bio { margin:0 auto 24px; }
             .hero-links { justify-content:center; }
             .nav-links { display:none; }
+            .nav-links.active {
+                display:flex; flex-direction:column;
+                position:absolute; top:100%; left:0; right:0;
+                background:rgba(10,10,10,0.98); backdrop-filter:blur(20px);
+                padding:24px; gap:20px;
+                border-bottom:1px solid var(--border);
+            }
+            .hamburger { display:block; }
             .edu-grid { grid-template-columns:1fr; }
             .skill-grid { grid-template-columns:repeat(2,1fr); }
             .contact-grid { grid-template-columns:1fr 1fr; gap:8px; }
@@ -222,7 +234,10 @@
 
 <nav>
     <div class="nav-inner">
-        <div class="logo">S<span>.</span></div>
+        <div class="logo"><a href="#about" style="color:inherit;text-decoration:none">S<span>.</span></a></div>
+        <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+            <i class="fas fa-bars"></i>
+        </button>
         <ul class="nav-links">
             <li><a href="#about">Tentang</a></li>
             <li><a href="#experience">Pengalaman</a></li>

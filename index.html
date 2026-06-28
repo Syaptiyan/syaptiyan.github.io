@@ -1,969 +1,384 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Syaptiyan Ade Putra | Portfolio</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Portfolio Syaptiyan Ade Putra - Fresh Graduate Teknik Informatika" />
-	<meta name="author" content="Syaptiyan Ade Putra" />
-
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-	<link href="css/animate.css" rel="stylesheet">
-	<link href="css/bootstrap.css" rel="stylesheet">
-
-	<style>
-		* {
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-		}
-
-		body {
-			font-family: 'Inter', sans-serif;
-			color: #333;
-			overflow-x: hidden;
-		}
-
-		/* ===== NAVBAR ===== */
-		.navbar-custom {
-			position: fixed;
-			top: 0;
-			width: 100%;
-			z-index: 1000;
-			padding: 20px 0;
-			transition: all 0.3s ease;
-			background: transparent;
-		}
-
-		.navbar-custom.scrolled {
-			background: rgba(15, 23, 42, 0.95);
-			backdrop-filter: blur(10px);
-			padding: 12px 0;
-			box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-		}
-
-		.navbar-custom .nav-brand {
-			font-family: 'Poppins', sans-serif;
-			font-weight: 700;
-			font-size: 1.5rem;
-			color: #fff;
-			text-decoration: none;
-		}
-
-		.navbar-custom .nav-brand span {
-			color: #6366f1;
-		}
-
-		.nav-links {
-			display: flex;
-			gap: 32px;
-			list-style: none;
-			margin: 0;
-			padding: 0;
-		}
-
-		.nav-links a {
-			color: rgba(255, 255, 255, 0.8);
-			text-decoration: none;
-			font-size: 0.9rem;
-			font-weight: 500;
-			transition: color 0.3s;
-			position: relative;
-		}
-
-		.nav-links a:hover {
-			color: #fff;
-		}
-
-		.nav-links a::after {
-			content: '';
-			position: absolute;
-			bottom: -4px;
-			left: 0;
-			width: 0;
-			height: 2px;
-			background: #6366f1;
-			transition: width 0.3s;
-		}
-
-		.nav-links a:hover::after {
-			width: 100%;
-		}
-
-		/* ===== HERO ===== */
-		.hero {
-			min-height: 100vh;
-			background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
-			display: flex;
-			align-items: center;
-			position: relative;
-			overflow: hidden;
-		}
-
-		.hero::before {
-			content: '';
-			position: absolute;
-			top: -50%;
-			left: -50%;
-			width: 200%;
-			height: 200%;
-			background: radial-gradient(circle at 30% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
-				radial-gradient(circle at 70% 80%, rgba(139, 92, 246, 0.06) 0%, transparent 50%);
-			animation: float 20s ease-in-out infinite;
-		}
-
-		@keyframes float {
-			0%, 100% { transform: translate(0, 0); }
-			50% { transform: translate(-2%, -2%); }
-		}
-
-		.hero-content {
-			position: relative;
-			z-index: 2;
-		}
-
-		.hero-badge {
-			display: inline-block;
-			padding: 8px 20px;
-			background: rgba(99, 102, 241, 0.15);
-			border: 1px solid rgba(99, 102, 241, 0.3);
-			border-radius: 50px;
-			color: #a5b4fc;
-			font-size: 0.85rem;
-			font-weight: 500;
-			margin-bottom: 24px;
-			animation: fadeInUp 0.8s ease;
-		}
-
-		.hero h1 {
-			font-family: 'Poppins', sans-serif;
-			font-size: 4rem;
-			font-weight: 800;
-			color: #fff;
-			line-height: 1.1;
-			margin-bottom: 20px;
-			animation: fadeInUp 0.8s ease 0.2s both;
-		}
-
-		.hero h1 .gradient-text {
-			background: linear-gradient(135deg, #6366f1, #a78bfa, #c084fc);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			background-clip: text;
-		}
-
-		.hero p {
-			font-size: 1.15rem;
-			color: rgba(255, 255, 255, 0.6);
-			max-width: 500px;
-			line-height: 1.7;
-			margin-bottom: 36px;
-			animation: fadeInUp 0.8s ease 0.4s both;
-		}
-
-		.hero-buttons {
-			display: flex;
-			gap: 16px;
-			animation: fadeInUp 0.8s ease 0.6s both;
-		}
-
-		.btn-primary-custom {
-			padding: 14px 32px;
-			background: linear-gradient(135deg, #6366f1, #8b5cf6);
-			color: #fff;
-			border: none;
-			border-radius: 12px;
-			font-weight: 600;
-			font-size: 0.95rem;
-			text-decoration: none;
-			transition: all 0.3s;
-			display: inline-flex;
-			align-items: center;
-			gap: 8px;
-		}
-
-		.btn-primary-custom:hover {
-			transform: translateY(-2px);
-			box-shadow: 0 10px 40px rgba(99, 102, 241, 0.4);
-			color: #fff;
-		}
-
-		.btn-outline-custom {
-			padding: 14px 32px;
-			background: transparent;
-			color: #fff;
-			border: 1px solid rgba(255, 255, 255, 0.2);
-			border-radius: 12px;
-			font-weight: 600;
-			font-size: 0.95rem;
-			text-decoration: none;
-			transition: all 0.3s;
-			display: inline-flex;
-			align-items: center;
-			gap: 8px;
-		}
-
-		.btn-outline-custom:hover {
-			border-color: #6366f1;
-			background: rgba(99, 102, 241, 0.1);
-			color: #fff;
-		}
-
-		.hero-image {
-			position: relative;
-			animation: fadeInUp 0.8s ease 0.4s both;
-		}
-
-		.profile-img-wrapper {
-			position: relative;
-			display: inline-block;
-		}
-
-		.profile-img {
-			width: 380px;
-			height: 380px;
-			object-fit: cover;
-			border-radius: 24px;
-			box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-		}
-
-		.profile-img-wrapper::before {
-			content: '';
-			position: absolute;
-			top: -8px;
-			left: -8px;
-			right: -8px;
-			bottom: -8px;
-			border-radius: 28px;
-			background: linear-gradient(135deg, #6366f1, #a78bfa, #c084fc);
-			z-index: -1;
-			opacity: 0.5;
-		}
-
-		.floating-card {
-			position: absolute;
-			background: rgba(255, 255, 255, 0.1);
-			backdrop-filter: blur(10px);
-			border: 1px solid rgba(255, 255, 255, 0.15);
-			border-radius: 16px;
-			padding: 16px 20px;
-			color: #fff;
-			font-size: 0.85rem;
-			animation: float 6s ease-in-out infinite;
-		}
-
-		.floating-card.card-1 {
-			top: 20px;
-			right: -40px;
-			animation-delay: 0s;
-		}
-
-		.floating-card.card-2 {
-			bottom: 40px;
-			left: -60px;
-			animation-delay: 2s;
-		}
-
-		.floating-card i {
-			color: #a78bfa;
-			margin-right: 8px;
-		}
-
-		/* ===== SECTION STYLES ===== */
-		.section {
-			padding: 100px 0;
-		}
-
-		.section-dark {
-			background: #0f172a;
-		}
-
-		.section-light {
-			background: #f8fafc;
-		}
-
-		.section-title {
-			font-family: 'Poppins', sans-serif;
-			font-size: 2.5rem;
-			font-weight: 700;
-			margin-bottom: 16px;
-			color: #0f172a;
-		}
-
-		.section-dark .section-title {
-			color: #fff;
-		}
-
-		.section-subtitle {
-			color: #64748b;
-			font-size: 1.05rem;
-			max-width: 500px;
-		}
-
-		.section-dark .section-subtitle {
-			color: rgba(255, 255, 255, 0.5);
-		}
-
-		/* ===== ABOUT ===== */
-		.about-stats {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			gap: 24px;
-			margin-top: 40px;
-		}
-
-		.stat-card {
-			background: #fff;
-			border: 1px solid #e2e8f0;
-			border-radius: 16px;
-			padding: 28px;
-			text-align: center;
-			transition: all 0.3s;
-		}
-
-		.stat-card:hover {
-			transform: translateY(-4px);
-			box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
-			border-color: #6366f1;
-		}
-
-		.stat-icon {
-			width: 56px;
-			height: 56px;
-			background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
-			border-radius: 14px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			margin: 0 auto 16px;
-			font-size: 1.3rem;
-			color: #6366f1;
-		}
-
-		.stat-number {
-			font-family: 'Poppins', sans-serif;
-			font-size: 1.8rem;
-			font-weight: 700;
-			color: #0f172a;
-		}
-
-		.stat-label {
-			color: #64748b;
-			font-size: 0.9rem;
-			margin-top: 4px;
-		}
-
-		.about-text {
-			color: #475569;
-			line-height: 1.8;
-			font-size: 1.05rem;
-		}
-
-		/* ===== EXPERIENCE ===== */
-		.timeline-card {
-			background: rgba(255, 255, 255, 0.05);
-			border: 1px solid rgba(255, 255, 255, 0.1);
-			border-radius: 20px;
-			padding: 32px;
-			margin-bottom: 24px;
-			transition: all 0.3s;
-			position: relative;
-			overflow: hidden;
-		}
-
-		.timeline-card::before {
-			content: '';
-			position: absolute;
-			left: 0;
-			top: 0;
-			bottom: 0;
-			width: 4px;
-			background: linear-gradient(180deg, #6366f1, #a78bfa);
-			border-radius: 4px;
-		}
-
-		.timeline-card:hover {
-			background: rgba(255, 255, 255, 0.08);
-			transform: translateX(8px);
-		}
-
-		.timeline-header {
-			display: flex;
-			justify-content: space-between;
-			align-items: flex-start;
-			margin-bottom: 12px;
-			flex-wrap: wrap;
-			gap: 8px;
-		}
-
-		.timeline-title {
-			font-family: 'Poppins', sans-serif;
-			font-size: 1.2rem;
-			font-weight: 600;
-			color: #fff;
-		}
-
-		.timeline-date {
-			padding: 6px 16px;
-			background: rgba(99, 102, 241, 0.2);
-			border-radius: 50px;
-			color: #a5b4fc;
-			font-size: 0.8rem;
-			font-weight: 500;
-		}
-
-		.timeline-company {
-			color: #a78bfa;
-			font-size: 0.95rem;
-			font-weight: 500;
-			margin-bottom: 8px;
-		}
-
-		.timeline-desc {
-			color: rgba(255, 255, 255, 0.6);
-			font-size: 0.95rem;
-			line-height: 1.7;
-		}
-
-		/* ===== EDUCATION ===== */
-		.education-card {
-			background: #fff;
-			border: 1px solid #e2e8f0;
-			border-radius: 20px;
-			padding: 32px;
-			margin-bottom: 24px;
-			transition: all 0.3s;
-			display: flex;
-			gap: 24px;
-			align-items: flex-start;
-		}
-
-		.education-card:hover {
-			transform: translateY(-4px);
-			box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
-		}
-
-		.edu-icon {
-			width: 60px;
-			height: 60px;
-			background: linear-gradient(135deg, #6366f1, #8b5cf6);
-			border-radius: 16px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			font-size: 1.5rem;
-			color: #fff;
-			flex-shrink: 0;
-		}
-
-		.edu-title {
-			font-family: 'Poppins', sans-serif;
-			font-size: 1.15rem;
-			font-weight: 600;
-			color: #0f172a;
-		}
-
-		.edu-date {
-			color: #6366f1;
-			font-size: 0.85rem;
-			font-weight: 500;
-			margin: 4px 0;
-		}
-
-		.edu-major {
-			color: #64748b;
-			font-size: 0.95rem;
-		}
-
-		/* ===== SKILLS ===== */
-		.skill-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-			gap: 24px;
-		}
-
-		.skill-card {
-			background: rgba(255, 255, 255, 0.05);
-			border: 1px solid rgba(255, 255, 255, 0.1);
-			border-radius: 20px;
-			padding: 32px;
-			transition: all 0.3s;
-		}
-
-		.skill-card:hover {
-			background: rgba(255, 255, 255, 0.08);
-			transform: translateY(-4px);
-			border-color: #6366f1;
-		}
-
-		.skill-icon {
-			width: 56px;
-			height: 56px;
-			background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
-			border-radius: 14px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			font-size: 1.5rem;
-			color: #a78bfa;
-			margin-bottom: 20px;
-		}
-
-		.skill-name {
-			font-family: 'Poppins', sans-serif;
-			font-weight: 600;
-			font-size: 1.1rem;
-			color: #fff;
-			margin-bottom: 8px;
-		}
-
-		.skill-desc {
-			color: rgba(255, 255, 255, 0.5);
-			font-size: 0.9rem;
-			line-height: 1.6;
-		}
-
-		/* ===== CONTACT ===== */
-		.contact-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-			gap: 24px;
-		}
-
-		.contact-card {
-			background: #fff;
-			border: 1px solid #e2e8f0;
-			border-radius: 20px;
-			padding: 32px;
-			text-align: center;
-			transition: all 0.3s;
-			text-decoration: none;
-			display: block;
-		}
-
-		.contact-card:hover {
-			transform: translateY(-4px);
-			box-shadow: 0 12px 40px rgba(99, 102, 241, 0.12);
-			border-color: #6366f1;
-		}
-
-		.contact-icon {
-			width: 64px;
-			height: 64px;
-			margin: 0 auto 16px;
-			border-radius: 16px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			font-size: 1.5rem;
-			color: #fff;
-		}
-
-		.contact-icon.wa { background: linear-gradient(135deg, #25d366, #128c7e); }
-		.contact-icon.ig { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
-		.contact-icon.gh { background: linear-gradient(135deg, #333, #24292e); }
-		.contact-icon.email { background: linear-gradient(135deg, #6366f1, #8b5cf6); }
-
-		.contact-label {
-			font-family: 'Poppins', sans-serif;
-			font-weight: 600;
-			color: #0f172a;
-			font-size: 1rem;
-			margin-bottom: 4px;
-		}
-
-		.contact-value {
-			color: #64748b;
-			font-size: 0.9rem;
-		}
-
-		/* ===== FOOTER ===== */
-		.footer {
-			background: #0f172a;
-			padding: 40px 0;
-			text-align: center;
-			border-top: 1px solid rgba(255, 255, 255, 0.05);
-		}
-
-		.footer-text {
-			color: rgba(255, 255, 255, 0.4);
-			font-size: 0.9rem;
-		}
-
-		.footer-social {
-			display: flex;
-			justify-content: center;
-			gap: 16px;
-			margin-bottom: 20px;
-		}
-
-		.footer-social a {
-			width: 44px;
-			height: 44px;
-			border-radius: 12px;
-			background: rgba(255, 255, 255, 0.05);
-			border: 1px solid rgba(255, 255, 255, 0.1);
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			color: rgba(255, 255, 255, 0.6);
-			text-decoration: none;
-			transition: all 0.3s;
-		}
-
-		.footer-social a:hover {
-			background: #6366f1;
-			border-color: #6366f1;
-			color: #fff;
-			transform: translateY(-2px);
-		}
-
-		/* ===== ANIMATIONS ===== */
-		@keyframes fadeInUp {
-			from {
-				opacity: 0;
-				transform: translateY(30px);
-			}
-			to {
-				opacity: 1;
-				transform: translateY(0);
-			}
-		}
-
-		.animate-on-scroll {
-			opacity: 0;
-			transform: translateY(30px);
-			transition: all 0.8s ease;
-		}
-
-		.animate-on-scroll.visible {
-			opacity: 1;
-			transform: translateY(0);
-		}
-
-		/* ===== RESPONSIVE ===== */
-		@media (max-width: 768px) {
-			.hero h1 {
-				font-size: 2.5rem;
-			}
-
-			.profile-img {
-				width: 280px;
-				height: 280px;
-			}
-
-			.hero-buttons {
-				flex-direction: column;
-			}
-
-			.about-stats {
-				grid-template-columns: 1fr;
-			}
-
-			.timeline-header {
-				flex-direction: column;
-			}
-
-			.education-card {
-				flex-direction: column;
-				text-align: center;
-			}
-
-			.floating-card {
-				display: none;
-			}
-
-			.nav-links {
-				display: none;
-			}
-		}
-	</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Syaptiyan Ade Putra</title>
+    <meta name="description" content="IT Security & Infrastructure Professional">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --card: #141414;
+            --card-hover: #1a1a1a;
+            --border: #222;
+            --text: #fafafa;
+            --text-dim: #888;
+            --accent: #6366f1;
+            --accent-glow: rgba(99,102,241,0.15);
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family:'Plus Jakarta Sans',sans-serif;
+            background:var(--bg);
+            color:var(--text);
+            line-height:1.6;
+            -webkit-font-smoothing:antialiased;
+        }
+        a { color:inherit; text-decoration:none; }
+
+        /* NAV */
+        nav {
+            position:fixed; top:0; width:100%; z-index:100;
+            padding:16px 0;
+            background:rgba(10,10,10,0.8);
+            backdrop-filter:blur(20px);
+            border-bottom:1px solid transparent;
+            transition:all .3s;
+        }
+        nav.scrolled { border-bottom-color:var(--border); }
+        .nav-inner {
+            max-width:900px; margin:0 auto; padding:0 24px;
+            display:flex; justify-content:space-between; align-items:center;
+        }
+        .logo { font-weight:800; font-size:1.2rem; letter-spacing:-0.5px; }
+        .logo span { color:var(--accent); }
+        .nav-links { display:flex; gap:28px; list-style:none; }
+        .nav-links a {
+            font-size:.85rem; font-weight:500; color:var(--text-dim);
+            transition:color .2s;
+        }
+        .nav-links a:hover { color:var(--text); }
+
+        /* MAIN */
+        .wrap { max-width:900px; margin:0 auto; padding:0 24px; }
+
+        /* HERO */
+        .hero {
+            min-height:100vh; display:flex; align-items:center;
+            padding-top:80px;
+        }
+        .hero-inner { display:flex; align-items:center; gap:48px; }
+        .hero-photo {
+            width:180px; height:180px; border-radius:50%;
+            object-fit:cover; flex-shrink:0;
+            border:3px solid var(--border);
+            box-shadow:0 0 60px var(--accent-glow);
+        }
+        .hero-info h1 {
+            font-size:2.8rem; font-weight:800; letter-spacing:-1.5px;
+            line-height:1.1; margin-bottom:8px;
+        }
+        .hero-info .role {
+            font-size:1.1rem; color:var(--accent); font-weight:600;
+            margin-bottom:16px;
+        }
+        .hero-info .bio {
+            color:var(--text-dim); font-size:.95rem;
+            max-width:480px; margin-bottom:24px;
+        }
+        .hero-links { display:flex; gap:12px; flex-wrap:wrap; }
+        .pill {
+            display:inline-flex; align-items:center; gap:8px;
+            padding:10px 20px; border-radius:100px;
+            font-size:.85rem; font-weight:600;
+            border:1px solid var(--border); background:var(--card);
+            transition:all .2s;
+        }
+        .pill:hover {
+            border-color:var(--accent); background:var(--accent-glow);
+        }
+        .pill i { font-size:.9rem; }
+
+        /* SECTION */
+        section { padding:80px 0; }
+        .sec-title {
+            font-size:1.4rem; font-weight:700; letter-spacing:-0.5px;
+            margin-bottom:32px; display:flex; align-items:center; gap:12px;
+        }
+        .sec-title::before {
+            content:''; display:block; width:24px; height:2px;
+            background:var(--accent);
+        }
+
+        /* EXPERIENCE */
+        .exp-list { display:flex; flex-direction:column; gap:16px; }
+        .exp-card {
+            background:var(--card); border:1px solid var(--border);
+            border-radius:16px; padding:28px;
+            transition:all .2s;
+        }
+        .exp-card:hover {
+            background:var(--card-hover);
+            border-color:#333;
+            transform:translateY(-2px);
+        }
+        .exp-head {
+            display:flex; justify-content:space-between; align-items:flex-start;
+            margin-bottom:12px; gap:12px; flex-wrap:wrap;
+        }
+        .exp-company {
+            font-size:1.05rem; font-weight:700;
+        }
+        .exp-badge {
+            padding:4px 14px; border-radius:100px; font-size:.75rem; font-weight:600;
+            background:var(--accent-glow); color:var(--accent);
+            white-space:nowrap;
+        }
+        .exp-role {
+            font-size:.9rem; color:var(--text-dim); font-weight:500;
+            margin-bottom:12px;
+        }
+        .exp-desc {
+            list-style:none; display:flex; flex-direction:column; gap:8px;
+        }
+        .exp-desc li {
+            font-size:.85rem; color:var(--text-dim);
+            padding-left:16px; position:relative;
+        }
+        .exp-desc li::before {
+            content:''; position:absolute; left:0; top:9px;
+            width:4px; height:4px; border-radius:50%;
+            background:var(--accent);
+        }
+
+        /* EDUCATION */
+        .edu-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+        .edu-card {
+            background:var(--card); border:1px solid var(--border);
+            border-radius:16px; padding:24px;
+        }
+        .edu-icon {
+            width:40px; height:40px; border-radius:10px;
+            background:var(--accent-glow); color:var(--accent);
+            display:flex; align-items:center; justify-content:center;
+            font-size:1rem; margin-bottom:12px;
+        }
+        .edu-school { font-weight:700; font-size:.95rem; margin-bottom:2px; }
+        .edu-year { font-size:.8rem; color:var(--accent); font-weight:500; }
+        .edu-major { font-size:.85rem; color:var(--text-dim); margin-top:4px; }
+
+        /* SKILLS */
+        .skill-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+        .skill-tag {
+            background:var(--card); border:1px solid var(--border);
+            border-radius:12px; padding:16px; text-align:center;
+            font-size:.85rem; font-weight:600;
+            transition:all .2s;
+        }
+        .skill-tag:hover {
+            border-color:var(--accent); background:var(--accent-glow);
+        }
+        .skill-tag i { display:block; font-size:1.2rem; color:var(--accent); margin-bottom:8px; }
+
+        /* CONTACT */
+        .contact-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+        .contact-card {
+            background:var(--card); border:1px solid var(--border);
+            border-radius:16px; padding:24px 16px; text-align:center;
+            transition:all .2s;
+        }
+        .contact-card:hover {
+            border-color:var(--accent); background:var(--accent-glow);
+            transform:translateY(-2px);
+        }
+        .contact-card i {
+            font-size:1.5rem; margin-bottom:10px; display:block;
+        }
+        .contact-card .label {
+            font-size:.75rem; color:var(--text-dim); font-weight:500;
+        }
+        .contact-card .value {
+            font-size:.85rem; font-weight:600; margin-top:2px;
+        }
+
+        /* FOOTER */
+        footer {
+            padding:32px 0; text-align:center;
+            border-top:1px solid var(--border);
+            font-size:.8rem; color:var(--text-dim);
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:768px) {
+            .hero-inner { flex-direction:column; text-align:center; }
+            .hero-photo { width:140px; height:140px; }
+            .hero-info h1 { font-size:2rem; }
+            .hero-info .bio { margin:0 auto 24px; }
+            .hero-links { justify-content:center; }
+            .nav-links { display:none; }
+            .edu-grid { grid-template-columns:1fr; }
+            .skill-grid { grid-template-columns:repeat(2,1fr); }
+            .contact-grid { grid-template-columns:repeat(2,1fr); }
+            .exp-head { flex-direction:column; }
+        }
+    </style>
 </head>
-
 <body>
 
-	<!-- Navbar -->
-	<nav class="navbar-custom">
-		<div class="container">
-			<div class="d-flex justify-content-between align-items-center">
-				<a href="#" class="nav-brand">S<span>.</span></a>
-				<ul class="nav-links">
-					<li><a href="#about">Tentang</a></li>
-					<li><a href="#experience">Pengalaman</a></li>
-					<li><a href="#education">Pendidikan</a></li>
-					<li><a href="#skills">Keahlian</a></li>
-					<li><a href="#contact">Kontak</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+<nav>
+    <div class="nav-inner">
+        <div class="logo">S<span>.</span></div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
 
-	<!-- Hero Section -->
-	<section class="hero" id="home">
-		<div class="container">
-			<div class="row align-items-center">
-				<div class="col-md-6 hero-content">
-					<div class="hero-badge">
-						<i class="fas fa-circle" style="font-size: 6px; vertical-align: middle; margin-right: 6px;"></i>
-						Available for Work
-					</div>
-					<h1>Hi, Saya<br><span class="gradient-text">Syaptiyan<br>Ade Putra</span></h1>
-					<p>Fresh Graduate Teknik Informatika yang passionate dalam dunia IT dan selalu siap untuk belajar hal baru serta berkontribusi dalam tim.</p>
-					<div class="hero-buttons">
-						<a href="#contact" class="btn-primary-custom">
-							<i class="fas fa-paper-plane"></i> Hubungi Saya
-						</a>
-						<a href="#experience" class="btn-outline-custom">
-							<i class="fas fa-briefcase"></i> Lihat Pengalaman
-						</a>
-					</div>
-				</div>
-				<div class="col-md-6 text-center hero-image">
-					<div class="profile-img-wrapper">
-						<img src="images/pp.jpg" alt="Syaptiyan Ade Putra" class="profile-img">
-					</div>
-					<div class="floating-card card-1">
-						<i class="fas fa-laptop-code"></i> IT Support
-					</div>
-					<div class="floating-card card-2">
-						<i class="fas fa-database"></i> Data Entry
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+<!-- HERO -->
+<section class="hero" id="about">
+    <div class="wrap">
+        <div class="hero-inner">
+            <img src="images/pp.jpg" alt="Syaptiyan" class="hero-photo">
+            <div class="hero-info">
+                <h1>Syaptiyan<br>Ade Putra</h1>
+                <div class="role">IT Security L1 - BigFix Engineer</div>
+                <p class="bio">IT Security professional dengan pengalaman 3+ tahun di patch management, server hardening, dan infrastructure monitoring menggunakan BigFix.</p>
+                <div class="hero-links">
+                    <a href="https://wa.me/6282122745893" target="_blank" class="pill"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    <a href="https://instagram.com/adee.razer" target="_blank" class="pill"><i class="fab fa-instagram"></i> @adee.razer</a>
+                    <a href="https://github.com/Syaptiyan" target="_blank" class="pill"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://linkedin.com/in/syaptiyan-ade-putra-b4945120b" target="_blank" class="pill"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-	<!-- About Section -->
-	<section class="section section-light" id="about">
-		<div class="container">
-			<div class="row align-items-center">
-				<div class="col-lg-7 animate-on-scroll">
-					<h2 class="section-title">Tentang Saya</h2>
-					<p class="section-subtitle mb-4">Mengenal lebih dekat tentang saya</p>
-					<p class="about-text">Saya adalah lulusan Teknik Informatika dari Universitas Indraprasta PGRI. Memiliki pengalaman bekerja di bidang IT Support dan Data Entry. Saya adalah pribadi yang teliti, bertanggung jawab, dan senang bekerja dalam tim. Selalu antusias untuk mempelajari teknologi baru dan mengembangkan kemampuan diri.</p>
-				</div>
-				<div class="col-lg-5 animate-on-scroll">
-					<div class="about-stats">
-						<div class="stat-card">
-							<div class="stat-icon"><i class="fas fa-graduation-cap"></i></div>
-							<div class="stat-number">S1</div>
-							<div class="stat-label">Teknik Informatika</div>
-						</div>
-						<div class="stat-card">
-							<div class="stat-icon"><i class="fas fa-briefcase"></i></div>
-							<div class="stat-number">2+</div>
-							<div class="stat-label">Pengalaman Kerja</div>
-						</div>
-						<div class="stat-card">
-							<div class="stat-icon"><i class="fas fa-clock"></i></div>
-							<div class="stat-number">1+</div>
-							<div class="stat-label">Tahun Pengalaman</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+<!-- EXPERIENCE -->
+<section id="experience">
+    <div class="wrap">
+        <div class="sec-title">Experience</div>
+        <div class="exp-list">
+            <div class="exp-card">
+                <div class="exp-head">
+                    <div class="exp-company">XSYS Solusi Cemerlang</div>
+                    <div class="exp-badge">Mei 2023 - Sekarang</div>
+                </div>
+                <div class="exp-role">IT Security L1 - Patch & Hardening BigFix · Project at Bank Mandiri</div>
+                <ul class="exp-desc">
+                    <li>Setting up and configuring BigFix agents on servers for seamless monitoring and management</li>
+                    <li>Implementing proactive server patching strategies to address vulnerabilities and enhance security</li>
+                    <li>Enforcing rigorous security measures and best practices using BigFix hardening solutions</li>
+                    <li>Creating detailed weekly and monthly reports for tracking progress and informed decision-making</li>
+                </ul>
+            </div>
+            <div class="exp-card">
+                <div class="exp-head">
+                    <div class="exp-company">Lumina (YC W22)</div>
+                    <div class="exp-badge">Sep 2022 - Mar 2023</div>
+                </div>
+                <div class="exp-role">Data Entry Operator</div>
+                <ul class="exp-desc">
+                    <li>Recording job vacancy details accurately in the company's database</li>
+                    <li>Validating data inputs and maintaining database integrity</li>
+                    <li>Double-checking accuracy of stored information for job vacancies</li>
+                </ul>
+            </div>
+            <div class="exp-card">
+                <div class="exp-head">
+                    <div class="exp-company">Elitery</div>
+                    <div class="exp-badge">Jan 2021 - Jun 2022</div>
+                </div>
+                <div class="exp-role">IT Helpdesk Support</div>
+                <ul class="exp-desc">
+                    <li>Providing education on Desktop as a Service (DaaS) to optimize user onboarding</li>
+                    <li>Migrating local user data to server for data security</li>
+                    <li>Assisting remote users with network printers, SAP, and Microsoft Office configuration</li>
+                    <li>Generating periodic reports for performance monitoring and evaluation</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
 
-	<!-- Experience Section -->
-	<section class="section section-dark" id="experience">
-		<div class="container">
-			<div class="text-center mb-5 animate-on-scroll">
-				<h2 class="section-title">Pengalaman Kerja</h2>
-				<p class="section-subtitle mx-auto">Riwayat perjalanan karir saya</p>
-			</div>
-			<div class="row justify-content-center">
-				<div class="col-lg-8">
-					<div class="timeline-card animate-on-scroll">
-						<div class="timeline-header">
-							<div>
-								<div class="timeline-title">PT. Data Sinergitama Jaya</div>
-								<div class="timeline-company">IT Helpdesk Support Project</div>
-							</div>
-							<div class="timeline-date">Juni 2021 - Desember 2021</div>
-						</div>
-						<div class="timeline-desc">
-							Bertugas memberikan dukungan teknis terkait masalah IT, melakukan troubleshooting hardware dan software, serta memastikan kelancaran operasional sistem dan jaringan perusahaan.
-						</div>
-					</div>
-					<div class="timeline-card animate-on-scroll">
-						<div class="timeline-header">
-							<div>
-								<div class="timeline-title">PT. Lentera Asa Nusantara</div>
-								<div class="timeline-company">Data Entry</div>
-							</div>
-							<div class="timeline-date">Januari 2022 - Juni 2022</div>
-						</div>
-						<div class="timeline-desc">
-							Bertugas melakukan input dan pengelolaan data dengan akurat, memastikan integritas data, serta membuat laporan berkala untuk kebutuhan operasional perusahaan.
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+<!-- EDUCATION -->
+<section id="education">
+    <div class="wrap">
+        <div class="sec-title">Education</div>
+        <div class="edu-grid">
+            <div class="edu-card">
+                <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div class="edu-school">Universitas Indraprasta PGRI</div>
+                <div class="edu-year">2016 - 2020</div>
+                <div class="edu-major">S1 Teknik Informatika</div>
+            </div>
+            <div class="edu-card">
+                <div class="edu-icon"><i class="fas fa-school"></i></div>
+                <div class="edu-school">SMA Yaperjasa</div>
+                <div class="edu-year">2013 - 2016</div>
+                <div class="edu-major">Ilmu Pengetahuan Alam</div>
+            </div>
+        </div>
+    </div>
+</section>
 
-	<!-- Education Section -->
-	<section class="section section-light" id="education">
-		<div class="container">
-			<div class="text-center mb-5 animate-on-scroll">
-				<h2 class="section-title">Pendidikan</h2>
-				<p class="section-subtitle mx-auto">Riwayat pendidikan saya</p>
-			</div>
-			<div class="row justify-content-center">
-				<div class="col-lg-8">
-					<div class="education-card animate-on-scroll">
-						<div class="edu-icon"><i class="fas fa-university"></i></div>
-						<div>
-							<div class="edu-title">Universitas Indraprasta PGRI</div>
-							<div class="edu-date">2016 - 2020</div>
-							<div class="edu-major">S1 Teknik Informatika</div>
-						</div>
-					</div>
-					<div class="education-card animate-on-scroll">
-						<div class="edu-icon"><i class="fas fa-school"></i></div>
-						<div>
-							<div class="edu-title">SMA Yaperjasa</div>
-							<div class="edu-date">2013 - 2016</div>
-							<div class="edu-major">Ilmu Pengetahuan Alam (IPA)</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+<!-- SKILLS -->
+<section id="skills">
+    <div class="wrap">
+        <div class="sec-title">Skills</div>
+        <div class="skill-grid">
+            <div class="skill-tag"><i class="fas fa-shield-halved"></i>BigFix</div>
+            <div class="skill-tag"><i class="fas fa-server"></i>Server Patching</div>
+            <div class="skill-tag"><i class="fas fa-lock"></i>Security Hardening</div>
+            <div class="skill-tag"><i class="fas fa-desktop"></i>DaaS / IT Support</div>
+            <div class="skill-tag"><i class="fas fa-network-wired"></i>Networking</div>
+            <div class="skill-tag"><i class="fas fa-chart-line"></i>Reporting</div>
+        </div>
+    </div>
+</section>
 
-	<!-- Skills Section -->
-	<section class="section section-dark" id="skills">
-		<div class="container">
-			<div class="text-center mb-5 animate-on-scroll">
-				<h2 class="section-title">Keahlian</h2>
-				<p class="section-subtitle mx-auto">Kemampuan dan keahlian yang saya miliki</p>
-			</div>
-			<div class="skill-grid">
-				<div class="skill-card animate-on-scroll">
-					<div class="skill-icon"><i class="fas fa-headset"></i></div>
-					<div class="skill-name">IT Support</div>
-					<div class="skill-desc">Troubleshooting hardware & software, instalasi sistem, maintenance jaringan, dan dukungan teknis untuk pengguna.</div>
-				</div>
-				<div class="skill-card animate-on-scroll">
-					<div class="skill-icon"><i class="fas fa-keyboard"></i></div>
-					<div class="skill-name">Data Entry</div>
-					<div class="skill-desc">Input dan pengelolaan data dengan akurat, pembuatan laporan, dan menjaga integritas data perusahaan.</div>
-				</div>
-				<div class="skill-card animate-on-scroll">
-					<div class="skill-icon"><i class="fas fa-network-wired"></i></div>
-					<div class="skill-name">Networking</div>
-					<div class="skill-desc">Pemahaman dasar jaringan komputer, konfigurasi TCP/IP, dan troubleshooting konektivitas.</div>
-				</div>
-				<div class="skill-card animate-on-scroll">
-					<div class="skill-icon"><i class="fas fa-code"></i></div>
-					<div class="skill-name">Web Development</div>
-					<div class="skill-desc">Dasar pengembangan web menggunakan HTML, CSS, JavaScript, dan framework modern.</div>
-				</div>
-				<div class="skill-card animate-on-scroll">
-					<div class="skill-icon"><i class="fas fa-database"></i></div>
-					<div class="skill-name">Database</div>
-					<div class="skill-desc">Pemahaman dasar database MySQL, query SQL, dan pengelolaan data relasional.</div>
-				</div>
-				<div class="skill-card animate-on-scroll">
-					<div class="skill-icon"><i class="fas fa-users"></i></div>
-					<div class="skill-name">Teamwork</div>
-					<div class="skill-desc">Kemampuan bekerja dalam tim, komunikasi efektif, dan kolaborasi untuk mencapai tujuan bersama.</div>
-				</div>
-			</div>
-		</div>
-	</section>
+<!-- CONTACT -->
+<section id="contact">
+    <div class="wrap">
+        <div class="sec-title">Contact</div>
+        <div class="contact-grid">
+            <a href="https://wa.me/6282122745893" target="_blank" class="contact-card">
+                <i class="fab fa-whatsapp" style="color:#25d366"></i>
+                <div class="label">WhatsApp</div>
+                <div class="value">+62 821-2274-5893</div>
+            </a>
+            <a href="https://instagram.com/adee.razer" target="_blank" class="contact-card">
+                <i class="fab fa-instagram" style="color:#e4405f"></i>
+                <div class="label">Instagram</div>
+                <div class="value">@adee.razer</div>
+            </a>
+            <a href="https://github.com/Syaptiyan" target="_blank" class="contact-card">
+                <i class="fab fa-github" style="color:#fff"></i>
+                <div class="label">GitHub</div>
+                <div class="value">Syaptiyan</div>
+            </a>
+            <a href="https://linkedin.com/in/syaptiyan-ade-putra-b4945120b" target="_blank" class="contact-card">
+                <i class="fab fa-linkedin" style="color:#0a66c2"></i>
+                <div class="label">LinkedIn</div>
+                <div class="value">Syaptiyan</div>
+            </a>
+        </div>
+    </div>
+</section>
 
-	<!-- Contact Section -->
-	<section class="section section-light" id="contact">
-		<div class="container">
-			<div class="text-center mb-5 animate-on-scroll">
-				<h2 class="section-title">Hubungi Saya</h2>
-				<p class="section-subtitle mx-auto">Mari terhubung dan berdiskusi</p>
-			</div>
-			<div class="contact-grid">
-				<a href="https://wa.me/6282122745893" target="_blank" class="contact-card animate-on-scroll">
-					<div class="contact-icon wa"><i class="fab fa-whatsapp"></i></div>
-					<div class="contact-label">WhatsApp</div>
-					<div class="contact-value">+62 821-2274-5893</div>
-				</a>
-				<a href="https://instagram.com/adee.razer" target="_blank" class="contact-card animate-on-scroll">
-					<div class="contact-icon ig"><i class="fab fa-instagram"></i></div>
-					<div class="contact-label">Instagram</div>
-					<div class="contact-value">@adee.razer</div>
-				</a>
-				<a href="https://github.com/Syaptiyan" target="_blank" class="contact-card animate-on-scroll">
-					<div class="contact-icon gh"><i class="fab fa-github"></i></div>
-					<div class="contact-label">GitHub</div>
-					<div class="contact-value">Syaptiyan</div>
-				</a>
-				<a href="mailto:syaptiyan@email.com" class="contact-card animate-on-scroll">
-					<div class="contact-icon email"><i class="fas fa-envelope"></i></div>
-					<div class="contact-label">Email</div>
-					<div class="contact-value">syaptiyan@email.com</div>
-				</a>
-			</div>
-		</div>
-	</section>
+<footer>
+    <div class="wrap">&copy; 2024 Syaptiyan Ade Putra</div>
+</footer>
 
-	<!-- Footer -->
-	<footer class="footer">
-		<div class="container">
-			<div class="footer-social">
-				<a href="https://wa.me/6282122745893" target="_blank"><i class="fab fa-whatsapp"></i></a>
-				<a href="https://instagram.com/adee.razer" target="_blank"><i class="fab fa-instagram"></i></a>
-				<a href="https://github.com/Syaptiyan" target="_blank"><i class="fab fa-github"></i></a>
-			</div>
-			<p class="footer-text">&copy; 2024 Syaptiyan Ade Putra. All rights reserved.</p>
-		</div>
-	</footer>
-
-	<!-- Scripts -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script>
-		// Navbar scroll effect
-		$(window).scroll(function () {
-			if ($(this).scrollTop() > 50) {
-				$('.navbar-custom').addClass('scrolled');
-			} else {
-				$('.navbar-custom').removeClass('scrolled');
-			}
-		});
-
-		// Smooth scrolling
-		$('a[href^="#"]').on('click', function (e) {
-			e.preventDefault();
-			var target = $(this.getAttribute('href'));
-			if (target.length) {
-				$('html, body').animate({
-					scrollTop: target.offset().top - 80
-				}, 800);
-			}
-		});
-
-		// Animate on scroll
-		$(window).scroll(function () {
-			$('.animate-on-scroll').each(function () {
-				var elementTop = $(this).offset().top;
-				var elementBottom = elementTop + $(this).outerHeight();
-				var viewportTop = $(window).scrollTop();
-				var viewportBottom = viewportTop + $(window).height();
-
-				if (elementBottom > viewportTop && elementTop < viewportBottom - 100) {
-					$(this).addClass('visible');
-				}
-			});
-		});
-
-		// Trigger on load
-		$(window).trigger('scroll');
-	</script>
-
+<script>
+    // Nav scroll
+    window.addEventListener('scroll', () => {
+        document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 50);
+    });
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            e.preventDefault();
+            const t = document.querySelector(a.getAttribute('href'));
+            if(t) window.scrollTo({ top:t.offsetTop-80, behavior:'smooth' });
+        });
+    });
+</script>
 </body>
-
 </html>

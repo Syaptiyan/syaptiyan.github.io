@@ -2,19 +2,6 @@
 
 Portfolio Pribadi - Web Developer & IT Enthusiast
 
-## 💼 Pengalaman Kerja
-
-### Lumina (YC W22)
-**Operator Data Entry** | Sep 2022 - Mar 2023
-- Input data lowongan pekerjaan ke database
-- Validasi data dan menjaga integritas database
-
-### Elitery
-**IT Helpdesk Support** | Jan 2021 - Jun 2022
-- Edukasi pengguna tentang DaaS
-- Migrasi data lokal ke server
-- Bantuan konfigurasi printer, SAP, Microsoft Office
-
 ## 🎓 Pendidikan
 
 - **S1 Teknik Informatika** - Universitas Indraprasta PGRI (2016-2020)
@@ -22,11 +9,10 @@ Portfolio Pribadi - Web Developer & IT Enthusiast
 
 ## 🛠️ Keahlian
 
-- BigFix (Patch Management & Hardening)
-- Server Patching & Security Hardening
-- DaaS / IT Support
-- Networking
-- Reporting & Documentation
+- Web Development (HTML, CSS, JavaScript)
+- Networking & IT Support
+- Database Management
+- Problem Solving & Documentation
 
 ## 🚀 Project
 

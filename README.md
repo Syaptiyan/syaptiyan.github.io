@@ -2,11 +2,6 @@
 
 Portfolio Pribadi - Web Developer & IT Enthusiast
 
-## 🎓 Pendidikan
-
-- **S1 Teknik Informatika** - Universitas Indraprasta PGRI (2016-2020)
-- **SMA Yaperjasa** - IPA (2013-2016)
-
 ## 🛠️ Keahlian
 
 - Web Development (HTML, CSS, JavaScript)

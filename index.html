@@ -176,6 +176,47 @@
         }
         .skill-tag i { display:block; font-size:1.2rem; color:var(--accent); margin-bottom:8px; }
 
+        /* PROJECTS */
+        .project-card {
+            background:var(--card); border:1px solid var(--border);
+            border-radius:20px; padding:28px;
+            display:flex; align-items:center; gap:20px;
+            transition:all .2s;
+        }
+        .project-card:hover {
+            background:var(--card-hover);
+            border-color:var(--accent);
+            transform:translateY(-2px);
+        }
+        .project-icon {
+            width:56px; height:56px; border-radius:14px; flex-shrink:0;
+            background:rgba(239,68,68,0.15); color:#ef4444;
+            display:flex; align-items:center; justify-content:center;
+            font-size:1.5rem;
+        }
+        .project-name {
+            font-weight:700; font-size:1.05rem; margin-bottom:4px;
+        }
+        .project-desc {
+            font-size:.85rem; color:var(--text-dim); line-height:1.5;
+            margin-bottom:8px;
+        }
+        .project-tech {
+            display:flex; gap:8px; flex-wrap:wrap;
+        }
+        .project-tech span {
+            padding:4px 10px; border-radius:100px; font-size:.7rem; font-weight:600;
+            background:rgba(99,102,241,0.15); color:var(--accent);
+        }
+        .project-arrow {
+            color:var(--text-dim); font-size:1.2rem; flex-shrink:0;
+            transition:all .2s;
+        }
+        .project-card:hover .project-arrow {
+            color:var(--accent);
+            transform:translateX(4px);
+        }
+
         /* CONTACT */
         .contact-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
         .contact-card {
@@ -226,6 +267,8 @@
             .contact-grid { grid-template-columns:1fr 1fr; gap:8px; }
             .contact-card { padding:16px 12px; }
             .contact-card .value { font-size:.75rem; }
+            .project-card { flex-direction:column; text-align:center; padding:20px; }
+            .project-arrow { display:none; }
             .exp-head { flex-direction:column; }
         }
     </style>
@@ -243,6 +286,7 @@
             <li><a href="#experience">Pengalaman</a></li>
             <li><a href="#education">Pendidikan</a></li>
             <li><a href="#skills">Keahlian</a></li>
+            <li><a href="#projects">Project</a></li>
             <li><a href="#contact">Kontak</a></li>
         </ul>
     </div>
@@ -348,6 +392,24 @@
             <div class="skill-tag"><i class="fas fa-network-wired"></i>Networking</div>
             <div class="skill-tag"><i class="fas fa-chart-line"></i>Reporting</div>
         </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+    <div class="wrap">
+        <div class="sec-title">Project</div>
+        <a href="https://syaptiyan.github.io/corona" target="_blank" class="project-card">
+            <div class="project-icon"><i class="fas fa-virus"></i></div>
+            <div class="project-info">
+                <div class="project-name">COVID-19 Indonesia</div>
+                <div class="project-desc">Dashboard real-time data COVID-19 di Indonesia dengan grafik perkembangan kasus dari awal hingga terkini.</div>
+                <div class="project-tech">
+                    <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Chart.js</span>
+                </div>
+            </div>
+            <i class="fas fa-arrow-right project-arrow"></i>
+        </a>
     </div>
 </section>
 

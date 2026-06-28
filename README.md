@@ -39,7 +39,7 @@ Berpengalaman 3+ tahun di bidang IT Security, patch management, server hardening
 
 ## 🚀 Project
 
-### [COVID-19 Indonesia Dashboard](https://syaptiyan.github.io/covid19-dashboard/)
+### [COVID-19 Indonesia](https://syaptiyan.github.io/covid19/)
 Dashboard real-time data COVID-19 di Indonesia dengan grafik interaktif, perbandingan ASEAN, dan fitur lengkap.
 
 ## 📫 Kontak

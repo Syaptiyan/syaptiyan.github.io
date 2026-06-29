@@ -23,6 +23,12 @@ Profil lengkap 8 Presiden Republik Indonesia dengan timeline interaktif, detail 
 ### [Perusahaan Indonesia](https://syaptiyan.github.io/perusahaan-indo/)
 Daftar lengkap perusahaan besar Indonesia berdasarkan kategori — Bank, Telkom, E-commerce, Teknologi, F&B, Otomoif, Pertambangan, Properti, Retail, Energi, Penerbangan, dan Farmasi.
 
+### [Peta Interaktif Indonesia](https://syaptiyan.github.io/peta-indo/)
+Peta interaktif 38 provinsi Indonesia dengan data penduduk, luas wilayah, ibu kota, dan nama pulau.
+
+### [Wisata Indonesia](https://syaptiyan.github.io/wisata-indo/)
+Daftar tempat wisata populer di Indonesia berdasarkan kategori — Alam, Pantai, Budaya, Sejarah, Adventure, dan Kuliner.
+
 ## 📫 Kontak
 
 - Instagram: [@adee.razer](https://instagram.com/adee.razer)

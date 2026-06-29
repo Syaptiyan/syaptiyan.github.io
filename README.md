@@ -20,6 +20,9 @@ Daftar lengkap Pahlawan Nasional Indonesia dengan fitur pencarian, filter per da
 ### [Presiden Indonesia](https://syaptiyan.github.io/presiden-indo/)
 Profil lengkap 8 Presiden Republik Indonesia dengan timeline interaktif, detail pencapaian, dan UI/UX premium.
 
+### [Perusahaan Indonesia](https://syaptiyan.github.io/perusahaan-indo/)
+Daftar lengkap perusahaan besar Indonesia berdasarkan kategori — Bank, Telkom, E-commerce, Teknologi, F&B, Otomoif, Pertambangan, Properti, Retail, Energi, Penerbangan, dan Farmasi.
+
 ## 📫 Kontak
 
 - Instagram: [@adee.razer](https://instagram.com/adee.razer)

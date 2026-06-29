@@ -64,11 +64,54 @@
             padding-top:80px;
         }
         .hero-inner { display:flex; align-items:center; gap:48px; }
+        .hero-photo-wrapper {
+            position:relative; flex-shrink:0;
+            width:200px; height:200px;
+        }
+        .hero-photo-ring {
+            position:absolute; inset:-6px;
+            border-radius:50%;
+            background:conic-gradient(from 0deg, var(--accent), #ec4899, #8b5cf6, var(--accent));
+            animation:spin 4s linear infinite;
+            padding:6px;
+        }
+        .hero-photo-ring::after {
+            content:''; position:absolute; inset:3px;
+            border-radius:50%; background:var(--bg);
+        }
+        @keyframes spin { to { transform:rotate(360deg); } }
+        .hero-photo-dots {
+            position:absolute; inset:-20px;
+            border-radius:50%;
+            animation:spin-reverse 10s linear infinite;
+        }
+        .hero-photo-dots::before {
+            content:''; position:absolute; top:0; left:50%;
+            width:10px; height:10px; border-radius:50%;
+            background:var(--accent); transform:translate(-50%,-50%);
+            box-shadow:0 0 12px var(--accent);
+        }
+        .hero-photo-dots::after {
+            content:''; position:absolute; bottom:0; left:50%;
+            width:8px; height:8px; border-radius:50%;
+            background:#ec4899; transform:translate(-50%,50%);
+            box-shadow:0 0 12px #ec4899;
+        }
+        @keyframes spin-reverse { to { transform:rotate(-360deg); } }
+        .hero-photo-glow {
+            position:absolute; inset:-30px;
+            border-radius:50%;
+            background:radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            animation:pulse 3s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%,100% { opacity:0.5; transform:scale(0.9); }
+            50% { opacity:1; transform:scale(1.1); }
+        }
         .hero-photo {
-            width:180px; height:180px; border-radius:50%;
-            object-fit:cover; flex-shrink:0;
-            border:3px solid var(--border);
-            box-shadow:0 0 60px var(--accent-glow);
+            width:100%; height:100%; border-radius:50%;
+            object-fit:cover; position:relative; z-index:1;
+            border:3px solid var(--bg);
         }
         .hero-info h1 {
             font-size:2.8rem; font-weight:800; letter-spacing:-1.5px;
@@ -218,11 +261,24 @@
         }
 
         /* CONTACT */
-        .contact-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+        .contact-pyramid {
+            display:flex; flex-direction:column; align-items:center; gap:12px;
+            max-width:600px; margin:0 auto;
+        }
+        .contact-top {
+            display:flex; justify-content:center;
+            width:50%;
+        }
+        .contact-bottom {
+            display:flex; gap:12px; width:100%;
+        }
+        .contact-bottom .contact-card {
+            flex:1;
+        }
         .contact-card {
             background:var(--card); border:1px solid var(--border);
             border-radius:16px; padding:24px 16px; text-align:center;
-            transition:all .2s;
+            transition:all .2s; width:100%;
         }
         .contact-card:hover {
             border-color:var(--accent); background:var(--accent-glow);
@@ -249,7 +305,7 @@
         /* RESPONSIVE */
         @media(max-width:768px) {
             .hero-inner { flex-direction:column; text-align:center; }
-            .hero-photo { width:140px; height:140px; }
+            .hero-photo-wrapper { width:160px; height:160px; }
             .hero-info h1 { font-size:2rem; }
             .hero-info .bio { margin:0 auto 24px; }
             .hero-links { justify-content:center; }
@@ -267,6 +323,8 @@
             .contact-grid { grid-template-columns:1fr 1fr; gap:8px; }
             .contact-card { padding:16px 12px; }
             .contact-card .value { font-size:.75rem; }
+            .contact-top { width:60%; }
+            .contact-bottom { gap:8px; }
             .project-card { flex-direction:column; text-align:center; padding:20px; }
             .project-arrow { display:none; }
             .exp-head { flex-direction:column; }
@@ -282,12 +340,12 @@
             <i class="fas fa-bars"></i>
         </button>
         <ul class="nav-links">
-            <li><a href="#about" onclick="document.querySelector('.nav-links').classList.remove('active')">Tentang</a></li>
-            <li><a href="#experience" onclick="document.querySelector('.nav-links').classList.remove('active')">Pengalaman</a></li>
-            <li><a href="#education" onclick="document.querySelector('.nav-links').classList.remove('active')">Pendidikan</a></li>
-            <li><a href="#skills" onclick="document.querySelector('.nav-links').classList.remove('active')">Keahlian</a></li>
-            <li><a href="#projects" onclick="document.querySelector('.nav-links').classList.remove('active')">Project</a></li>
-            <li><a href="#contact" onclick="document.querySelector('.nav-links').classList.remove('active')">Kontak</a></li>
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#experience">Pengalaman</a></li>
+            <li><a href="#education">Pendidikan</a></li>
+            <li><a href="#skills">Keahlian</a></li>
+            <li><a href="#projects">Project</a></li>
+            <li><a href="#contact">Kontak</a></li>
         </ul>
     </div>
 </nav>
@@ -296,7 +354,12 @@
 <section class="hero" id="about">
     <div class="wrap">
         <div class="hero-inner">
-            <img src="images/pp.jpg" alt="Syaptiyan" class="hero-photo">
+            <div class="hero-photo-wrapper">
+                <div class="hero-photo-glow"></div>
+                <div class="hero-photo-dots"></div>
+                <div class="hero-photo-ring"></div>
+                <img src="images/pp.jpg" alt="Syaptiyan" class="hero-photo">
+            </div>
             <div class="hero-info">
                 <h1>Syaptiyan<br>Ade Putra</h1>
                 <div class="role">IT Security L1 - BigFix Engineer</div>
@@ -409,73 +472,6 @@
             </div>
             <i class="fas fa-arrow-right project-arrow"></i>
         </a>
-        <a href="https://syaptiyan.github.io/pahlawan-indo" target="_blank" class="project-card">
-            <div class="project-icon" style="background:rgba(245,158,11,0.15);color:#f59e0b"><i class="fas fa-star"></i></div>
-            <div class="project-info">
-                <div class="project-name">Pahlawan Indonesia</div>
-                <div class="project-desc">Daftar lengkap Pahlawan Nasional Indonesia dengan fitur pencarian, filter, dan detail informasi.</div>
-                <div class="project-tech">
-                    <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Alpine.js</span><span>API</span>
-                </div>
-            </div>
-            <i class="fas fa-arrow-right project-arrow"></i>
-        </a>
-        <a href="https://syaptiyan.github.io/presiden-indo" target="_blank" class="project-card">
-            <div class="project-icon" style="background:rgba(220,38,38,0.15);color:#ef4444"><i class="fas fa-landmark"></i></div>
-            <div class="project-info">
-                <div class="project-name">Presiden Indonesia</div>
-                <div class="project-desc">Profil lengkap 8 Presiden RI dengan timeline interaktif, detail pencapaian, dan UI premium.</div>
-                <div class="project-tech">
-                    <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Alpine.js</span><span>Timeline</span>
-                </div>
-            </div>
-            <i class="fas fa-arrow-right project-arrow"></i>
-        </a>
-        <a href="https://syaptiyan.github.io/perusahaan-indo" target="_blank" class="project-card">
-            <div class="project-icon" style="background:rgba(59,130,246,0.15);color:#3b82f6"><i class="fas fa-building"></i></div>
-            <div class="project-info">
-                <div class="project-name">Perusahaan Indonesia</div>
-                <div class="project-desc">Daftar lengkap perusahaan besar Indonesia berdasarkan kategori — Bank, Telkom, E-commerce, Teknologi, dll.</div>
-                <div class="project-tech">
-                    <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Alpine.js</span><span>Tailwind</span>
-                </div>
-            </div>
-            <i class="fas fa-arrow-right project-arrow"></i>
-        </a>
-        <a href="https://syaptiyan.github.io/peta-indo" target="_blank" class="project-card">
-            <div class="project-icon" style="background:rgba(16,185,129,0.15);color:#10b981"><i class="fas fa-map"></i></div>
-            <div class="project-info">
-                <div class="project-name">Peta Interaktif Indonesia</div>
-                <div class="project-desc">Peta interaktif 38 provinsi Indonesia dengan data penduduk, luas, dan ibu kota.</div>
-                <div class="project-tech">
-                    <span>HTML</span><span>CSS</span><span>JavaScript</span><span>SVG</span><span>Tailwind</span>
-                </div>
-            </div>
-            <i class="fas fa-arrow-right project-arrow"></i>
-        </a>
-        <a href="https://syaptiyan.github.io/wisata-indo" target="_blank" class="project-card">
-            <div class="project-icon" style="background:rgba(249,115,22,0.15);color:#f97316"><i class="fas fa-umbrella-beach"></i></div>
-            <div class="project-info">
-                <div class="project-name">Wisata Indonesia</div>
-                <div class="project-desc">Daftar tempat wisata populer di Indonesia — alam, pantai, budaya, sejarah, kuliner.</div>
-                <div class="project-tech">
-                    <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Alpine.js</span><span>Tailwind</span>
-                </div>
-            </div>
-            <i class="fas fa-arrow-right project-arrow"></i>
-        </a>
-        <a href="https://syaptiyan.github.io/sipus" target="_blank" class="project-card">
-            <div class="project-icon" style="background:rgba(168,85,247,0.15);color:#a855f7"><i class="fas fa-book"></i></div>
-            <div class="project-info">
-                <div class="project-name">SIPUS - Sistem Perpustakaan</div>
-                <div class="project-desc">Sistem informasi perpustakaan lengkap — buku, anggota, peminjaman, denda, barcode, laporan, 2FA.</div>
-                <div class="project-tech">
-                    <span>PHP</span><span>CodeIgniter 4</span><span>MySQL</span><span>Tailwind</span><span>Alpine.js</span>
-                </div>
-            </div>
-            <span class="text-xs text-green-400 font-semibold mr-4">LIVE</span>
-            <i class="fas fa-arrow-right project-arrow"></i>
-        </a>
     </div>
 </section>
 
@@ -483,22 +479,26 @@
 <section id="contact">
     <div class="wrap">
         <div class="sec-title">Kontak</div>
-        <div class="contact-grid">
-            <a href="https://instagram.com/adee.razer" target="_blank" class="contact-card">
-                <i class="fab fa-instagram" style="color:#e4405f"></i>
-                <div class="label">Instagram</div>
-                <div class="value">@adee.razer</div>
-            </a>
-            <a href="https://github.com/Syaptiyan" target="_blank" class="contact-card">
-                <i class="fab fa-github" style="color:#fff"></i>
-                <div class="label">GitHub</div>
-                <div class="value">Syaptiyan</div>
-            </a>
-            <a href="https://linkedin.com/in/syaptiyan-ade-putra-b4945120b" target="_blank" class="contact-card">
-                <i class="fab fa-linkedin" style="color:#0a66c2"></i>
-                <div class="label">LinkedIn</div>
-                <div class="value">Syaptiyan</div>
-            </a>
+        <div class="contact-pyramid">
+            <div class="contact-top">
+                <a href="https://instagram.com/adee.razer" target="_blank" class="contact-card">
+                    <i class="fab fa-instagram" style="color:#e4405f"></i>
+                    <div class="label">Instagram</div>
+                    <div class="value">@adee.razer</div>
+                </a>
+            </div>
+            <div class="contact-bottom">
+                <a href="https://github.com/Syaptiyan" target="_blank" class="contact-card">
+                    <i class="fab fa-github" style="color:#fff"></i>
+                    <div class="label">GitHub</div>
+                    <div class="value">Syaptiyan</div>
+                </a>
+                <a href="https://linkedin.com/in/syaptiyan-ade-putra-b4945120b" target="_blank" class="contact-card">
+                    <i class="fab fa-linkedin" style="color:#0a66c2"></i>
+                    <div class="label">LinkedIn</div>
+                    <div class="value">Syaptiyan</div>
+                </a>
+            </div>
         </div>
     </div>
 </section>

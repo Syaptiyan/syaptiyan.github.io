@@ -17,6 +17,20 @@
             --text-dim: #888;
             --accent: #6366f1;
             --accent-glow: rgba(99,102,241,0.15);
+            --nav-bg: rgba(10,10,10,0.8);
+            --sidebar-bg: rgba(10,10,10,0.98);
+        }
+        [data-theme="light"] {
+            --bg: #ffffff;
+            --card: #f5f5f5;
+            --card-hover: #ebebeb;
+            --border: #e0e0e0;
+            --text: #1a1a1a;
+            --text-dim: #666;
+            --accent: #6366f1;
+            --accent-glow: rgba(99,102,241,0.1);
+            --nav-bg: rgba(255,255,255,0.8);
+            --sidebar-bg: rgba(255,255,255,0.98);
         }
         * { margin:0; padding:0; box-sizing:border-box; }
         body {
@@ -32,7 +46,7 @@
         nav {
             position:fixed; top:0; width:100%; z-index:100;
             padding:16px 0;
-            background:rgba(10,10,10,0.8);
+            background:var(--nav-bg);
             backdrop-filter:blur(20px);
             border-bottom:1px solid transparent;
             transition:all .3s;
@@ -53,6 +67,19 @@
         .hamburger {
             display:none; background:none; border:none;
             color:var(--text); font-size:1.4rem; cursor:pointer;
+        }
+
+        /* THEME TOGGLE */
+        .theme-toggle {
+            background:none; border:none; cursor:pointer;
+            color:var(--text); font-size:1.1rem;
+            padding:8px; border-radius:50%;
+            transition:all .2s;
+            display:flex; align-items:center; justify-content:center;
+        }
+        .theme-toggle:hover {
+            background:var(--accent-glow);
+            color:var(--accent);
         }
 
         /* MAIN */
@@ -316,9 +343,14 @@
             .nav-links.active {
                 display:flex; flex-direction:column;
                 position:absolute; top:100%; left:0; right:0;
-                background:rgba(10,10,10,0.98); backdrop-filter:blur(20px);
+                background:var(--sidebar-bg); backdrop-filter:blur(20px);
                 padding:24px; gap:20px;
                 border-bottom:1px solid var(--border);
+                animation:slideDown .3s ease;
+            }
+            @keyframes slideDown {
+                from { opacity:0; transform:translateY(-10px); }
+                to { opacity:1; transform:translateY(0); }
             }
             .hamburger { display:block; }
             .edu-grid { grid-template-columns:1fr; }
@@ -339,9 +371,14 @@
 <nav>
     <div class="nav-inner">
         <div class="logo"><a href="#about" style="color:inherit;text-decoration:none">S<span>.</span></a></div>
-        <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('active')">
-            <i class="fas fa-bars"></i>
-        </button>
+        <div style="display:flex;align-items:center;gap:8px;">
+            <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </button>
+            <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
         <ul class="nav-links">
             <li><a href="#about">Tentang</a></li>
             <li><a href="#experience">Pengalaman</a></li>
@@ -558,6 +595,30 @@
 </footer>
 
 <script>
+    // Theme toggle
+    function toggleTheme() {
+        const html = document.documentElement;
+        const icon = document.getElementById('theme-icon');
+        const isDark = html.getAttribute('data-theme') !== 'light';
+        
+        if (isDark) {
+            html.setAttribute('data-theme', 'light');
+            icon.className = 'fas fa-sun';
+            localStorage.setItem('theme', 'light');
+        } else {
+            html.removeAttribute('data-theme');
+            icon.className = 'fas fa-moon';
+            localStorage.setItem('theme', 'dark');
+        }
+    }
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        document.getElementById('theme-icon').className = 'fas fa-sun';
+    }
+
     // Nav scroll
     window.addEventListener('scroll', () => {
         document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 50);
@@ -568,6 +629,8 @@
             e.preventDefault();
             const t = document.querySelector(a.getAttribute('href'));
             if(t) window.scrollTo({ top:t.offsetTop-80, behavior:'smooth' });
+            // Close mobile menu
+            document.querySelector('.nav-links').classList.remove('active');
         });
     });
 </script>

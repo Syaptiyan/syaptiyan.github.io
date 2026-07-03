@@ -29,9 +29,6 @@ Peta interaktif 38 provinsi Indonesia dengan data penduduk, luas wilayah, ibu ko
 ### [Wisata Indonesia](https://syaptiyan.github.io/wisata-indo/)
 Daftar tempat wisata populer di Indonesia berdasarkan kategori — Alam, Pantai, Budaya, Sejarah, Adventure, dan Kuliner.
 
-### [SIPUS - Sistem Perpustakaan](https://github.com/Syaptiyan/sipus-ci4)
-Sistem informasi perpustakaan lengkap berbasis CodeIgniter 4 — buku, anggota, peminjaman, denda, barcode, laporan, 2FA, API.
-
 ## 📫 Kontak
 
 - Instagram: [@adee.razer](https://instagram.com/adee.razer)

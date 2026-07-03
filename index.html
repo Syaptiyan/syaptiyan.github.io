@@ -239,10 +239,12 @@
             background:var(--card); border:1px solid var(--border);
             border-radius:12px; padding:16px; text-align:center;
             font-size:.85rem; font-weight:600;
-            transition:all .2s;
+            transition:all .2s; cursor:pointer;
+            display:block;
         }
         .skill-tag:hover {
             border-color:var(--accent); background:var(--accent-glow);
+            transform:translateY(-2px);
         }
         .skill-tag i { display:block; font-size:1.2rem; color:var(--accent); margin-bottom:8px; }
 
@@ -487,12 +489,12 @@
     <div class="wrap">
         <div class="sec-title">Keahlian</div>
         <div class="skill-grid">
-            <div class="skill-tag"><i class="fas fa-shield-halved"></i>BigFix</div>
-            <div class="skill-tag"><i class="fas fa-server"></i>Server Patching</div>
-            <div class="skill-tag"><i class="fas fa-lock"></i>Security Hardening</div>
-            <div class="skill-tag"><i class="fas fa-desktop"></i>DaaS / IT Support</div>
-            <div class="skill-tag"><i class="fas fa-network-wired"></i>Networking</div>
-            <div class="skill-tag"><i class="fas fa-chart-line"></i>Reporting</div>
+            <a href="skills/bigfix.html" class="skill-tag"><i class="fas fa-shield-halved"></i>BigFix</a>
+            <a href="skills/server-patching.html" class="skill-tag"><i class="fas fa-server"></i>Server Patching</a>
+            <a href="skills/security-hardening.html" class="skill-tag"><i class="fas fa-lock"></i>Security Hardening</a>
+            <a href="skills/daas-it-support.html" class="skill-tag"><i class="fas fa-desktop"></i>DaaS / IT Support</a>
+            <a href="skills/networking.html" class="skill-tag"><i class="fas fa-network-wired"></i>Networking</a>
+            <a href="skills/reporting.html" class="skill-tag"><i class="fas fa-chart-line"></i>Reporting</a>
         </div>
     </div>
 </section>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BigFix - Syaptiyan Ade Putra</title>
+    <meta name="description" content="Keahlian BigFix - Endpoint Management & Security">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --card: #141414;
+            --card-hover: #1a1a1a;
+            --border: #222;
+            --text: #fafafa;
+            --text-dim: #888;
+            --accent: #6366f1;
+            --accent-glow: rgba(99,102,241,0.15);
+            --gradient-1: linear-gradient(135deg, #6366f1, #8b5cf6);
+        }
+        [data-theme="light"] {
+            --bg: #ffffff;
+            --card: #f5f5f5;
+            --card-hover: #ebebeb;
+            --border: #e0e0e0;
+            --text: #1a1a1a;
+            --text-dim: #666;
+            --accent-glow: rgba(99,102,241,0.1);
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family:'Plus Jakarta Sans',sans-serif;
+            background:var(--bg);
+            color:var(--text);
+            line-height:1.6;
+            -webkit-font-smoothing:antialiased;
+        }
+        a { color:inherit; text-decoration:none; }
+
+        /* NAV */
+        nav {
+            position:fixed; top:0; width:100%; z-index:100;
+            padding:16px 0;
+            background:var(--bg);
+            border-bottom:1px solid var(--border);
+        }
+        .nav-inner {
+            max-width:900px; margin:0 auto; padding:0 24px;
+            display:flex; justify-content:space-between; align-items:center;
+        }
+        .logo { font-weight:800; font-size:1.2rem; letter-spacing:-0.5px; }
+        .logo span { color:var(--accent); }
+        .back-btn {
+            display:inline-flex; align-items:center; gap:8px;
+            padding:8px 16px; border-radius:8px;
+            font-size:.85rem; font-weight:500;
+            border:1px solid var(--border); background:var(--card);
+            transition:all .2s;
+        }
+        .back-btn:hover {
+            border-color:var(--accent); background:var(--accent-glow);
+        }
+
+        /* HERO */
+        .hero {
+            padding:120px 0 60px;
+            text-align:center;
+            background:linear-gradient(180deg, var(--accent-glow) 0%, transparent 100%);
+        }
+        .hero-icon {
+            width:80px; height:80px; border-radius:20px;
+            background:var(--gradient-1); color:white;
+            display:flex; align-items:center; justify-content:center;
+            font-size:2rem; margin:0 auto 24px;
+            box-shadow:0 8px 32px rgba(99,102,241,0.3);
+        }
+        .hero h1 {
+            font-size:2.5rem; font-weight:800; letter-spacing:-1px;
+            margin-bottom:12px;
+        }
+        .hero p {
+            font-size:1.1rem; color:var(--text-dim);
+            max-width:600px; margin:0 auto;
+        }
+
+        /* CONTENT */
+        .wrap { max-width:900px; margin:0 auto; padding:0 24px; }
+        section { padding:60px 0; }
+
+        /* STATS */
+        .stats-grid {
+            display:grid; grid-template-columns:repeat(4,1fr); gap:16px;
+        }
+        .stat-card {
+            background:var(--card); border:1px solid var(--border);
+            border-radius:16px; padding:24px; text-align:center;
+        }
+        .stat-number {
+            font-size:2rem; font-weight:800; color:var(--accent);
+            margin-bottom:4px;
+        }
+        .stat-label {
+            font-size:.85rem; color:var(--text-dim);
+        }
+
+        /* FEATURES */
+        .sec-title {
+            font-size:1.4rem; font-weight:700; letter-spacing:-0.5px;
+            margin-bottom:32px; display:flex; align-items:center; gap:12px;
+        }
+        .sec-title::before {
+            content:''; display:block; width:24px; height:2px;
+            background:var(--accent);
+        }
+        .features-grid {
+            display:grid; grid-template-columns:1fr 1fr; gap:16px;
+        }
+        .feature-card {
+            background:var(--card); border:1px solid var(--border);
+            border-radius:16px; padding:28px;
+            transition:all .2s;
+        }
+        .feature-card:hover {
+            background:var(--card-hover);
+            border-color:var(--accent);
+            transform:translateY(-2px);
+        }
+        .feature-icon {
+            width:48px; height:48px; border-radius:12px;
+            background:var(--accent-glow); color:var(--accent);
+            display:flex; align-items:center; justify-content:center;
+            font-size:1.2rem; margin-bottom:16px;
+        }
+        .feature-title {
+            font-weight:700; font-size:1rem; margin-bottom:8px;
+        }
+        .feature-desc {
+            font-size:.85rem; color:var(--text-dim); line-height:1.6;
+        }
+
+        /* TOOLS */
+        .tools-list {
+            display:flex; flex-wrap:wrap; gap:12px;
+        }
+        .tool-tag {
+            background:var(--card); border:1px solid var(--border);
+            border-radius:100px; padding:10px 20px;
+            font-size:.85rem; font-weight:500;
+            display:flex; align-items:center; gap:8px;
+        }
+        .tool-tag i { color:var(--accent); }
+
+        /* EXPERIENCE */
+        .exp-timeline {
+            position:relative;
+            padding-left:32px;
+        }
+        .exp-timeline::before {
+            content:''; position:absolute; left:0; top:0; bottom:0;
+            width:2px; background:var(--border);
+        }
+        .exp-item {
+            position:relative;
+            margin-bottom:32px;
+        }
+        .exp-item::before {
+            content:''; position:absolute; left:-36px; top:8px;
+            width:12px; height:12px; border-radius:50%;
+            background:var(--accent); border:3px solid var(--bg);
+        }
+        .exp-item-title {
+            font-weight:700; font-size:1rem; margin-bottom:4px;
+        }
+        .exp-item-company {
+            font-size:.85rem; color:var(--accent); margin-bottom:8px;
+        }
+        .exp-item-desc {
+            font-size:.85rem; color:var(--text-dim);
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align:center;
+            padding:80px 0;
+        }
+        .cta-title {
+            font-size:1.8rem; font-weight:700; margin-bottom:16px;
+        }
+        .cta-desc {
+            color:var(--text-dim); margin-bottom:32px;
+        }
+        .cta-btn {
+            display:inline-flex; align-items:center; gap:8px;
+            padding:14px 28px; border-radius:100px;
+            font-size:.95rem; font-weight:600;
+            background:var(--gradient-1); color:white;
+            transition:all .2s;
+        }
+        .cta-btn:hover {
+            transform:translateY(-2px);
+            box-shadow:0 8px 24px rgba(99,102,241,0.4);
+        }
+
+        /* FOOTER */
+        footer {
+            padding:32px 0; text-align:center;
+            border-top:1px solid var(--border);
+            font-size:.8rem; color:var(--text-dim);
+        }
+
+        @media(max-width:768px) {
+            .hero h1 { font-size:2rem; }
+            .stats-grid { grid-template-columns:1fr 1fr; }
+            .features-grid { grid-template-columns:1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <div class="logo"><a href="../" style="color:inherit;text-decoration:none">S<span>.</span></a></div>
+        <a href="../#skills" class="back-btn"><i class="fas fa-arrow-left"></i> Kembali</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="wrap">
+        <div class="hero-icon"><i class="fas fa-shield-halved"></i></div>
+        <h1>BigFix</h1>
+        <p>Endpoint Management & Security Platform untuk patching, compliance, dan asset management di enterprise.</p>
+    </div>
+</section>
+
+<section>
+    <div class="wrap">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">3+</div>
+                <div class="stat-label">Tahun Pengalaman</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Server Dikelola</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">99%</div>
+                <div class="stat-label">Uptime Achieved</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1000+</div>
+                <div class="stat-label">Patches Deployed</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="wrap">
+        <div class="sec-title">Keahlian BigFix</div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-download"></i></div>
+                <div class="feature-title">Agent Deployment</div>
+                <div class="feature-desc">Setup dan konfigurasi BigFix agent di seluruh endpoint untuk monitoring real-time dan manajemen terpusat.</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-bug"></i></div>
+                <div class="feature-title">Patch Management</div>
+                <div class="feature-desc">Menjalankan patching server secara proaktif untuk menambal kerentanan dan meningkatkan keamanan sistem.</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-lock"></i></div>
+                <div class="feature-title">Compliance Check</div>
+                <div class="feature-desc">Memastikan semua endpoint memenuhi standar keamanan dan compliance perusahaan.</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-chart-bar"></i></div>
+                <div class="feature-title">Reporting & Analytics</div>
+                <div class="feature-desc">Generate laporan detail untuk tracking progress dan pengambilan keputusan berdasarkan data.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="wrap">
+        <div class="sec-title">Tools & Teknologi</div>
+        <div class="tools-list">
+            <div class="tool-tag"><i class="fas fa-check"></i> IBM BigFix</div>
+            <div class="tool-tag"><i class="fas fa-check"></i> BigFix Console</div>
+            <div class="tool-tag"><i class="fas fa-check"></i> Fixlet Debugger</div>
+            <div class="tool-tag"><i class="fas fa-check"></i> Relevance Language</div>
+            <div class="tool-tag"><i class="fas fa-check"></i> Action Script</div>
+            <div class="tool-tag"><i class="fas fa-check"></i> Web Reports</div>
+            <div class="tool-tag"><i class="fas fa-check"></i> BigFix Inventory</div>
+            <div class="tool-tag"><i class="fas fa-check"></i> BigFix Compliance</div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="wrap">
+        <div class="sec-title">Pengalaman Terkait</div>
+        <div class="exp-timeline">
+            <div class="exp-item">
+                <div class="exp-item-title">IT Security L1 - BigFix Engineer</div>
+                <div class="exp-item-company">XSYS Solusi Cemerlang • Mei 2023 - Sekarang</div>
+                <div class="exp-item-desc">Setup BigFix agent, patching server proaktif, hardening keamanan, dan reporting mingguan/bulanan.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="wrap">
+        <div class="cta-title">Butuh BigFix Expert?</div>
+        <div class="cta-desc">Saya siap membantu dengan endpoint management dan security.</div>
+        <a href="../#contact" class="cta-btn"><i class="fas fa-envelope"></i> Hubungi Saya</a>
+    </div>
+</section>
+
+<footer>
+    <div class="wrap">&copy; 2026 Syaptiyan Ade Putra</div>
+</footer>
+
+<script>
+    // Load theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+    }
+</script>
+</body>
+</html>

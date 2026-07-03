@@ -54,11 +54,10 @@ const syaptiyan = {
 
 ---
 
-### GitHub Stats
-
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=Syaptiyan&show_icons=true&theme=default&hide_border=true" width="49%" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Syaptiyan&layout=compact&theme=default&hide_border=true" width="40%" />
+**7 Public Repositories** · **Indonesia 🇮🇩**
+
+[![GitHub followers](https://img.shields.io/github/followers/Syaptiyan?style=social)](https://github.com/Syaptiyan)
 
 </div>

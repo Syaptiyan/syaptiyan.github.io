@@ -1,135 +1,165 @@
-<h1 align="center">👋 Hey, I'm Syaptiyan Ade Putra!</h1>
+<div align="center">
 
-<p align="center">
-  <b>Web Developer & IT Enthusiast</b><br>
-  <i>Building amazing web experiences with clean code</i>
-</p>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:6e40c9,100:0d1117&height=220&section=header&text=Syaptiyan%20Ade%20Putra&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Web%20Developer%20%7C%20IT%20Enthusiast&descSize=20&descAlignY=55&descAlign=50" />
 
-<p align="center">
-  <a href="https://syaptiyan.github.io"><img src="https://img.shields.io/badge/🌐_Website-Visit_Now-blue?style=for-the-badge" alt="Website"></a>
-  <a href="https://instagram.com/adee.razer"><img src="https://img.shields.io/badge/📸_Instagram-Follow_Me-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram"></a>
-  <a href="https://linkedin.com/in/syaptiyan-ade-putra-b4945120b"><img src="https://img.shields.io/badge/💼_LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
-</p>
+<br><br>
 
----
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=1000&color=6E40C9&center=true&vCenter=true&multiline=true&repeat=true&width=500&height=100&lines=Passionate+about+Web+Development;Building+amazing+digital+experiences;Always+learning%2C+always+growing)](https://git.io/typing-svg)
 
-## 🧠 About Me
+<br>
+
+<a href="https://syaptiyan.github.io"><img src="https://img.shields.io/badge/%F0%9F%8C%90_Website-Live_Here-6e40c9?style=for-the-badge&logo=google-chrome&logoColor=white" /></a>
+<a href="https://instagram.com/adee.razer"><img src="https://img.shields.io/badge/%F0%9F%93%B7_Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" /></a>
+<a href="https://linkedin.com/in/syaptiyan-ade-putra-b4945120b"><img src="https://img.shields.io/badge/%F0%9F%92%BC_LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+<a href="https://github.com/Syaptiyan"><img src="https://img.shields.io/badge/%E2%AD%90_GitHub-Follow_Me-24292e?style=for-the-badge&logo=github&logoColor=white" /></a>
+
+</div>
+
+<br>
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+
+## <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="30"> About Me
+
+<br>
 
 ```javascript
 const syaptiyan = {
-    pronouns: "He/Him",
+    name: "Syaptiyan Ade Putra",
+    role: "Web Developer & IT Enthusiast",
     location: "Indonesia 🇮🇩",
-    passion: ["Web Development", "IT Support", "Networking"],
-    currentlyBuilding: "Awesome Indonesian data projects",
-    motto: "Code with passion, solve with logic 💡"
+    languages: ["HTML", "CSS", "JavaScript", "PHP"],
+    loves: ["Clean Code", "UI/UX Design", "Problem Solving"],
+    motto: "Turning ideas into reality, one line of code at a time ✨"
 };
 ```
 
----
+<br>
 
-## 🛠️ Tech Stack
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
-<p align="center">
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
-  <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap">
-  <img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white" alt="Sass">
-  <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP">
-  <img src="https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
-  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git">
-</p>
+## <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="30"> Tech Stack
 
----
+<br>
 
-## 🚀 Featured Projects
+<div align="center">
 
-<table>
-  <tr>
-    <td width="50%">
-      <h3 align="center">📊 COVID-19 Indonesia</h3>
-      <p align="center">
-        <a href="https://syaptiyan.github.io/covid19/">
-          <img src="https://img.shields.io/badge/Live_Demo-View_Project-green?style=for-the-badge" alt="Demo">
-        </a>
-      </p>
-      <p>Dashboard real-time data COVID-19 di Indonesia dengan grafik interaktif, perbandingan ASEAN, dan statistik lengkap.</p>
-    </td>
-    <td width="50%">
-      <h3 align="center">🦸 Pahlawan Indonesia</h3>
-      <p align="center">
-        <a href="https://syaptiyan.github.io/pahlawan-indo/">
-          <img src="https://img.shields.io/badge/Live_Demo-View_Project-green?style=for-the-badge" alt="Demo">
-        </a>
-      </p>
-      <p>Daftar lengkap Pahlawan Nasional Indonesia dengan fitur pencarian, filter, dan badge kategori.</p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%">
-      <h3 align="center">🏛️ Presiden Indonesia</h3>
-      <p align="center">
-        <a href="https://syaptiyan.github.io/presiden-indo/">
-          <img src="https://img.shields.io/badge/Live_Demo-View_Project-green?style=for-the-badge" alt="Demo">
-        </a>
-      </p>
-      <p>Profil lengkap 8 Presiden RI dengan timeline interaktif dan UI/UX premium.</p>
-    </td>
-    <td width="50%">
-      <h3 align="center">🏢 Perusahaan Indonesia</h3>
-      <p align="center">
-        <a href="https://syaptiyan.github.io/perusahaan-indo/">
-          <img src="https://img.shields.io/badge/Live_Demo-View_Project-green?style=for-the-badge" alt="Demo">
-        </a>
-      </p>
-      <p>Daftar perusahaan besar Indonesia berdasarkan kategori — Bank, Telkom, E-commerce, Teknologi, dll.</p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%">
-      <h3 align="center">🗺️ Peta Indonesia</h3>
-      <p align="center">
-        <a href="https://syaptiyan.github.io/peta-indo/">
-          <img src="https://img.shields.io/badge/Live_Demo-View_Project-green?style=for-the-badge" alt="Demo">
-        </a>
-      </p>
-      <p>Peta interaktif 38 provinsi Indonesia dengan data penduduk, luas wilayah, dan ibu kota.</p>
-    </td>
-    <td width="50%">
-      <h3 align="center">🏖️ Wisata Indonesia</h3>
-      <p align="center">
-        <a href="https://syaptiyan.github.io/wisata-indo/">
-          <img src="https://img.shields.io/badge/Live_Demo-View_Project-green?style=for-the-badge" alt="Demo">
-        </a>
-      </p>
-      <p>Daftar tempat wisata populer di Indonesia — Alam, Pantai, Budaya, Sejarah, Adventure, Kuliner.</p>
-    </td>
-  </tr>
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+
+</div>
+
+<br>
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+
+## <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="30"> Featured Projects
+
+<br>
+
+<table align="center">
+<tr>
+<td align="center" width="33%">
+<a href="https://syaptiyan.github.io/covid19/">
+<img src="https://img.shields.io/badge/📊_COVID--19-View_Live-6e40c9?style=for-the-badge" />
+</a>
+<br><br>
+Dashboard real-time COVID-19 Indonesia dengan grafik interaktif & perbandingan ASEAN
+</td>
+<td align="center" width="33%">
+<a href="https://syaptiyan.github.io/pahlawan-indo/">
+<img src="https://img.shields.io/badge/🦸_Pahlawan-View_Live-6e40c9?style=for-the-badge" />
+</a>
+<br><br>
+Daftar Pahlawan Nasional Indonesia dengan pencarian, filter & badge kategori
+</td>
+<td align="center" width="33%">
+<a href="https://syaptiyan.github.io/presiden-indo/">
+<img src="https://img.shields.io/badge/🏛️_Presiden-View_Live-6e40c9?style=for-the-badge" />
+</a>
+<br><br>
+Profil 8 Presiden RI dengan timeline interaktif & UI/UX premium
+</td>
+</tr>
+<tr>
+<td align="center" width="33%">
+<a href="https://syaptiyan.github.io/perusahaan-indo/">
+<img src="https://img.shields.io/badge/🏢_Perusahaan-View_Live-6e40c9?style=for-the-badge" />
+</a>
+<br><br>
+Daftar perusahaan besar Indonesia berdasarkan 12+ kategori
+</td>
+<td align="center" width="33%">
+<a href="https://syaptiyan.github.io/peta-indo/">
+<img src="https://img.shields.io/badge/🗺️_Peta-View_Live-6e40c9?style=for-the-badge" />
+</a>
+<br><br>
+Peta interaktif 38 provinsi dengan data penduduk & wilayah
+</td>
+<td align="center" width="33%">
+<a href="https://syaptiyan.github.io/wisata-indo/">
+<img src="https://img.shields.io/badge/🏖️_Wisata-View_Live-6e40c9?style=for-the-badge" />
+</a>
+<br><br>
+Tempat wisata populer Indonesia — Alam, Pantai, Budaya, dll
+</td>
+</tr>
 </table>
 
----
+<br>
 
-## 📊 GitHub Stats
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Syaptiyan&show_icons=true&theme=radical&hide_border=true&count_private=true" alt="GitHub Stats" width="48%">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Syaptiyan&theme=radical&hide_border=true" alt="GitHub Streak" width="48%">
-</p>
+## <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="30"> GitHub Stats
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Syaptiyan&layout=compact&theme=radical&hide_border=true" alt="Top Languages" width="40%">
-</p>
+<br>
 
----
+<div align="center">
+<img src="https://github-readme-stats.vercel.app/api?username=Syaptiyan&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&bg_color=0d1117&title_color=6e40c9&icon_color=6e40c9&text_color=c9d1d9" width="49%" />
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=Syaptiyan&theme=tokyonight&hide_border=true&background=0d1117&stroke=6e40c9&ring=6e40c9&fire=6e40c9&currStreakLabel=6e40c9" width="49%" />
+</div>
 
-## 🐍 Contribution Graph
+<br>
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Syaptiyan/Syaptiyan/output/github-snake-dark.svg" alt="Snake Animation" width="100%">
-</p>
+<div align="center">
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Syaptiyan&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=6e40c9&text_color=c9d1d9" width="40%" />
+</div>
 
----
+<br>
 
-<p align="center">
-  <i>⭐️ From <a href="https://github.com/Syaptiyan">Syaptiyan</a> with ❤️</i>
-</p>
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+
+## <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="30"> Contribution Graph
+
+<br>
+
+<div align="center">
+<img src="https://raw.githubusercontent.com/Syaptiyan/Syaptiyan/output/github-snake-dark.svg" width="100%" />
+</div>
+
+<br>
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+
+<br>
+
+<div align="center">
+
+### ✨ *"Code is poetry, and every project is a story."* ✨
+
+<br>
+
+<img src="https://komarev.com/ghpvc/?username=Syaptiyan&style=for-the-badge&color=6e40c9" alt="Profile Views" />
+
+<br><br>
+
+**Made with ❤️ by [Syaptiyan](https://github.com/Syaptiyan)**
+
+</div>

@@ -50,13 +50,12 @@ const syaptiyan = {
 | [Presiden Indonesia](https://syaptiyan.github.io/presiden-indo/) | Profil 8 Presiden RI dengan timeline interaktif |
 | [Perusahaan Indonesia](https://syaptiyan.github.io/perusahaan-indo/) | Perusahaan besar Indonesia berdasarkan kategori |
 | [Peta Indonesia](https://syaptiyan.github.io/peta-indo/) | Peta interaktif 38 provinsi dengan data lengkap |
-| [Wisata Indonesia](https://syaptiyan.github.io/wisata-indo/) | Tempat wisata populer di Indonesia |
 
 ---
 
 <div align="center">
 
-**7 Public Repositories** · **Indonesia 🇮🇩**
+**6 Public Repositories** · **Indonesia 🇮🇩**
 
 [![GitHub followers](https://img.shields.io/github/followers/Syaptiyan?style=social)](https://github.com/Syaptiyan)
 

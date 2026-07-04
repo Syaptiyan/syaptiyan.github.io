@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0] - 2026-07-04
+
+### Added
+- Tambah `og:image` untuk preview di WhatsApp/Twitter/Discord
+- Tambah `og:url` untuk canonical URL
+- Tambah `twitter:card` untuk Twitter preview
+
 ## [1.2.0] - 2026-07-03
 
 ### Removed

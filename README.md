@@ -48,14 +48,13 @@ const syaptiyan = {
 | [COVID-19 Indonesia](https://syaptiyan.github.io/covid19/) | Dashboard real-time COVID-19 dengan grafik & statistik ASEAN |
 | [Pahlawan Indonesia](https://syaptiyan.github.io/pahlawan-indo/) | Daftar Pahlawan Nasional dengan pencarian & filter |
 | [Presiden Indonesia](https://syaptiyan.github.io/presiden-indo/) | Profil 8 Presiden RI dengan timeline interaktif |
-| [Perusahaan Indonesia](https://syaptiyan.github.io/perusahaan-indo/) | Perusahaan besar Indonesia berdasarkan kategori |
 | [Peta Indonesia](https://syaptiyan.github.io/peta-indo/) | Peta interaktif 38 provinsi dengan data lengkap |
 
 ---
 
 <div align="center">
 
-**6 Public Repositories** · **Indonesia 🇮🇩**
+**5 Public Repositories** · **Indonesia 🇮🇩**
 
 [![GitHub followers](https://img.shields.io/github/followers/Syaptiyan?style=social)](https://github.com/Syaptiyan)
 

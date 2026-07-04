@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.4.0] - 2026-07-04
+
+### Removed
+- Hapus repository `perusahaan-indo` dari GitHub
+- Hapus referensi perusahaan dari portfolio & README
+
+### Updated
+- Jumlah project publik: 4
+
 ## [1.3.0] - 2026-07-04
 
 ### Added

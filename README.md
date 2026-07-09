@@ -46,9 +46,6 @@ const syaptiyan = {
 | Project | Description |
 |---------|-------------|
 | [COVID-19 Indonesia](https://syaptiyan.github.io/covid19-indonesia/) | Dashboard real-time COVID-19 dengan grafik & statistik ASEAN |
-| [Pahlawan Indonesia](https://syaptiyan.github.io/pahlawan-indonesia/) | Daftar Pahlawan Nasional dengan pencarian & filter |
-| [Presiden Indonesia](https://syaptiyan.github.io/presiden-indonesia/) | Profil 8 Presiden RI dengan timeline interaktif |
-| [Peta Indonesia](https://syaptiyan.github.io/peta-indonesia/) | Peta interaktif 38 provinsi dengan data lengkap |
 
 ---
 
